@@ -1,9 +1,11 @@
 <resources>
     <string name="app_name">Phone List</string>
     <string name="username">Username</string>
-    <string name="password">password</string>
+    <string name="password">Password</string>
     <string name="keep_me_logged">Keep me logged</string>
-    <string name="login">login</string>
+    <string name="login">Login</string>
     <string name="don_t_have_account_sign_up">Don´t have account? Sign Up!</string>
     <string name="recover_your_password">Recover your password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="signup">Signup</string>
 </resources>
