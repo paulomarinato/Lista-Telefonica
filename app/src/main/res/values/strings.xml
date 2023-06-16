@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Lista Telefonica</string>
+    <string name="app_name">Phone List</string>
     <string name="username">Username</string>
     <string name="password">password</string>
     <string name="keep_me_logged">Keep me logged</string>
