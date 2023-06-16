@@ -1,10 +1,11 @@
-package com.marinato.listatelefonica
+package com.marinato.listatelefonica.Activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import com.marinato.listatelefonica.R
 
 class SplahScreen_Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

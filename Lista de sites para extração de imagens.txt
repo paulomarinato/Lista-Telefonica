@@ -3,4 +3,4 @@
 
 iconmoon
 flaticon
-freeicons
+https://freeicons.io/
