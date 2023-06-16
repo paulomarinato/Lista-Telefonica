@@ -13,7 +13,7 @@ class SplahScreen_Activity : AppCompatActivity() {
         setContentView(R.layout.activity_splah_screen)
 
         Handler(Looper.getMainLooper()).postDelayed({
-            startActivity(Intent(this, LoguinActivity::class.java))
+            startActivity(Intent(this, LoginActivity::class.java))
         }, 1000)
     }
 }
