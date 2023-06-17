@@ -1,4 +1,4 @@
-package com.marinato.listatelefonica.Activity
+package com.marinato.listatelefonica.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
