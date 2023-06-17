@@ -31,6 +31,7 @@
             android:id="@+id/edit_username"
             android:hint="@string/username"
             android:gravity="center"
+            android:text="admin"
             android:drawableStart="@drawable/person_24"/>
 
         <EditText
@@ -39,6 +40,8 @@
             android:id="@+id/edit_password"
             android:hint="@string/password"
             android:gravity="center"
+            android:text="password"
+            android:inputType="textPassword"
             android:drawableStart="@drawable/lock_24"/>
 
         <CheckBox
