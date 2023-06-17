@@ -14,10 +14,13 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoguinBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.buttonLogin.setOnClickListener { }
-        binding.textSignup.setOnClickListener {
+        binding.buttonLogin.setOnClickListener { // mudar para MainActivity
+            startActivity(Intent(this, MainActivity::class.java))
+
+        }
+        binding.textSignup.setOnClickListener { // mudar para SignupActivity
             startActivity(Intent(this, SignupActivity2::class.java))
-        } // mudar para Activity Signup
+        }
 
         binding.textRecoverPassword.setOnClickListener { }
     }

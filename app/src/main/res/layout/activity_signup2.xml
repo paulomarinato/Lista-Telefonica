@@ -31,7 +31,7 @@
             android:id="@+id/edit_username"
             android:hint="@string/username"
             android:gravity="center"
-            android:drawableStart="@drawable/baseline_person_24"/>
+            android:drawableStart="@drawable/person_24"/>
 
         <EditText
             android:layout_width="match_parent"
@@ -39,7 +39,7 @@
             android:id="@+id/edit_password"
             android:hint="@string/password"
             android:gravity="center"
-            android:drawableStart="@drawable/baseline_lock_24"/>
+            android:drawableStart="@drawable/lock_24"/>
 
         <EditText
             android:layout_width="match_parent"
@@ -47,7 +47,7 @@
             android:id="@+id/edit_confirm_password"
             android:hint="@string/confirm_password"
             android:gravity="center"
-            android:drawableStart="@drawable/baseline_lock_24"/>
+            android:drawableStart="@drawable/lock_24"/>
 
         <Button
             android:id="@+id/button_signup"
