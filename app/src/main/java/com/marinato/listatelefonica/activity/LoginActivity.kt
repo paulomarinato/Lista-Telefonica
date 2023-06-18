@@ -24,6 +24,12 @@ class LoginActivity : AppCompatActivity() {
 
         sharedPreferences = application.getSharedPreferences(
             "login", Context.MODE_PRIVATE)
+        val username = sharedPreferences.getString("username", "")
+        if (username != null) {
+            if (username.isNotEmpty()){
+                startActivity(Intent(this, MainActivity::class.java))
+            }
+        }
 
         binding.buttonLogin.setOnClickListener { // mudar para MainActivity
             val username = binding.editUsername.text.toString()
@@ -54,6 +60,7 @@ class LoginActivity : AppCompatActivity() {
                     getString(R.string.please_insert_all_required_fields),
                     Toast.LENGTH_SHORT
                 ).show()
+
             }
         }
         binding.textSignup.setOnClickListener { // mudar para SignupActivity
