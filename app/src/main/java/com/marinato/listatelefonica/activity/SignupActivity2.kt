@@ -23,27 +23,37 @@ class SignupActivity2 : AppCompatActivity() {
             val passwordConfirm = binding.editConfirmPassword.text.toString()
 
             if (username.isNotEmpty() && password.isNotEmpty() && passwordConfirm.isNotEmpty()) {
-                if (password.equals(passwordConfirm)) {
+                if (password.equals(passwordConfirm)){
                     val res = db.insetUser(username, password)
                     if (res > 0) {
-                        Toast.makeText(applicationContext, getString(R.string.signup_ok), Toast.LENGTH_SHORT.Show())
-
+                        Toast.makeText(applicationContext,
+                            getString(R.string.signup_ok),
+                            Toast.LENGTH_SHORT
+                        ).show()
+                        finish()
                     } else {
+                        Toast.makeText(applicationContext,
+                            getString(R.string.signup_error),
+                            Toast.LENGTH_SHORT
+                        ).show()
+                        binding.editUsername.setText("")
+                        binding.editPassword.setText("")
+                        binding.editConfirmPassword.setText("")
+                    }
+                }
+                    else {
                         Toast.makeText(
                             applicationContext,
                             getString(R.string.password_don_t_match),
                             Toast.LENGTH_SHORT
                         ).show()
-
                     }
-                } else {
-
-                    Toast.makeText(
-                        applicationContext,
-                        getString(R.string.please_insert_all_required_fields),
-                        Toast.LENGTH_SHORT
-                    ).show()
-                }
+            } else {
+                Toast.makeText(
+                    applicationContext,
+                    getString(R.string.please_insert_all_required_fields),
+                    Toast.LENGTH_SHORT
+                ).show()
             }
         }
     }

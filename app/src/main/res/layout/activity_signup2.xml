@@ -39,6 +39,7 @@
             android:id="@+id/edit_password"
             android:hint="@string/password"
             android:gravity="center"
+            android:inputType="textPassword"
             android:drawableStart="@drawable/lock_24"/>
 
         <EditText
@@ -47,6 +48,7 @@
             android:id="@+id/edit_confirm_password"
             android:hint="@string/confirm_password"
             android:gravity="center"
+            android:inputType="textPassword"
             android:drawableStart="@drawable/lock_24"/>
 
         <Button

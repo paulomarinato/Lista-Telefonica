@@ -11,4 +11,5 @@
     <string name="password_don_t_match">Password don\'t match</string>
     <string name="please_insert_all_required_fields">Please insert all required fields</string>
     <string name="signup_ok">Signup Ok</string>
+    <string name="signup_error">signup error</string>
 </resources>
