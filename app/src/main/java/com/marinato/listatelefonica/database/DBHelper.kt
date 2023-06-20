@@ -18,16 +18,7 @@ class DBHelper(context: Context) : SQLiteOpenHelper (context, "database.db", nul
         "INSERT INTO contact (name, email, phone, imageId) VALUES (Paulo, paulo@email.com, 911112222,1)",
         "INSERT INTO contact (name, email, phone, imageId) VALUES (Roberto, Roberto@email.com, 933334444,1)",
         "INSERT INTO contact (name, email, phone, imageId) VALUES (Marinato, marinato@email.com, 955556666,1)",
-
-
     )
-    /*val nome: String = "",
-    val Email: String = "",
-    val address: String = "",
-    val id: Int = 0,
-    val phone: Int = 0,
-    val imageid: Int = 0 */
-
 
     override fun onCreate(db: SQLiteDatabase?) {
         sql.forEach {
@@ -38,7 +29,6 @@ class DBHelper(context: Context) : SQLiteOpenHelper (context, "database.db", nul
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
         TODO("Not yet implemented")
     }
-
                             /* --- CRUD USER --- */
 
     fun insertuser(username: String, password: String): Long {
