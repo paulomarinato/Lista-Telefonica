@@ -4,7 +4,6 @@ import android.content.Context
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.marinato.listatelefonica.R
 import com.marinato.listatelefonica.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {

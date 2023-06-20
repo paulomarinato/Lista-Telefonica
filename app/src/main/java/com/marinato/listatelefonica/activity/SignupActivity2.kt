@@ -24,7 +24,7 @@ class SignupActivity2 : AppCompatActivity() {
 
             if (username.isNotEmpty() && password.isNotEmpty() && passwordConfirm.isNotEmpty()) {
                 if (password.equals(passwordConfirm)){
-                    val res = db.insetUser(username, password)
+                    val res = db.insertuser(username, password)
                     if (res > 0) {
                         Toast.makeText(applicationContext,
                             getString(R.string.signup_ok),
@@ -40,8 +40,7 @@ class SignupActivity2 : AppCompatActivity() {
                         binding.editPassword.setText("")
                         binding.editConfirmPassword.setText("")
                     }
-                }
-                    else {
+                }else {
                         Toast.makeText(
                             applicationContext,
                             getString(R.string.password_don_t_match),

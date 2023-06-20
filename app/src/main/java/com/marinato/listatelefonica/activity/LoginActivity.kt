@@ -60,7 +60,6 @@ class LoginActivity : AppCompatActivity() {
                     getString(R.string.please_insert_all_required_fields),
                     Toast.LENGTH_SHORT
                 ).show()
-
             }
         }
         binding.textSignup.setOnClickListener { // mudar para SignupActivity
