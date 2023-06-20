@@ -1,11 +1,13 @@
 package com.marinato.listatelefonica.activity
 
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import com.marinato.listatelefonica.database.DBHelper
 import com.marinato.listatelefonica.databinding.ActivityMainBinding
 import com.marinato.listatelefonica.model.ContactModel
@@ -42,9 +44,16 @@ class MainActivity : AppCompatActivity() {
             )
         binding.listViewContacts.adapter = adapter
 
-        binding.listViewContacts.setOnItemClickListener { _, _, position, _ ->  }
+        binding.listViewContacts.setOnItemClickListener { _, _, position, _ ->
             /*Toast.makeText(applicationContext, contactList[position].name, Toast.LENGTH_SHORT).
             show() */
-        
+            val intent = Intent(applicationContext, ContactDetailActivity::class.java)
+            intent.putExtra("id", contactList[position].id)
+            startActivity(intent)
+        }
+
+        binding.buttonAdd.setOnClickListener{
+            startActivity(Intent(applicationContext, NewContactActivity::class.java))
+        }
     }
 }
