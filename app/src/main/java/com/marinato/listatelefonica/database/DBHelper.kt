@@ -6,6 +6,7 @@ import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import com.marinato.listatelefonica.model.ContactModel
 import com.marinato.listatelefonica.model.UserModel
+import java.net.Inet4Address
 
 class DBHelper(context: Context) : SQLiteOpenHelper (context, "database.db", null, 1){
 
@@ -13,11 +14,14 @@ class DBHelper(context: Context) : SQLiteOpenHelper (context, "database.db", nul
         "CREATE TABLE users (id INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "username TEXT UNIQUE, password TEXT)",
         "INSERT INTO users (username, password) VALUES ('admin', 'password'0)",
-        "CREATE TABLE contact(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, email TEXT," +
-                " address TEXT, phone INT, imageId TEXT)",
-        "INSERT INTO contact (name, email, phone, imageId) VALUES (Paulo, paulo@email.com, 911112222,1)",
-        "INSERT INTO contact (name, email, phone, imageId) VALUES (Roberto, Roberto@email.com, 933334444,1)",
-        "INSERT INTO contact (name, email, phone, imageId) VALUES (Marinato, marinato@email.com, 955556666,1)",
+        "CREATE TABLE contact(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, address TEXT, " +
+                "email TEXT, address TEXT, phone INT, imageId TEXT)",
+        "INSERT INTO contact (name, address, email, phone, imageId) VALUES " +
+                "('Paulo', 'address Paulo', 'paulo@email.com', '911112222',1)",
+        "INSERT INTO contact (name, address, email, phone, imageId) VALUES " +
+                "(Roberto, 'address Roberto', Roberto@email.com, 933334444,2)",
+        "INSERT INTO contact (name, address, email, phone, imageId) VALUES " +
+                "(Marinato, 'address Marinato', marinato@email.com, 955556666,3)",
     )
 
     override fun onCreate(db: SQLiteDatabase?) {
@@ -100,10 +104,11 @@ class DBHelper(context: Context) : SQLiteOpenHelper (context, "database.db", nul
     }
                                     /* --- CRUD CONTACTS --- */
 
-    fun insertContact(name: String, email: String, phone: Int, ImageId: Int): Long {
+    fun insertContact(name: String, address: String, email: String, phone: Int, ImageId: Int): Long {
         val db = this.writableDatabase
         val contentValues = ContentValues()
         contentValues.put("name", name)
+        contentValues.put("address", address)
         contentValues.put("email", email)
         contentValues.put("phone", phone)
         contentValues.put("imageId", ImageId)
@@ -112,10 +117,11 @@ class DBHelper(context: Context) : SQLiteOpenHelper (context, "database.db", nul
         return res
     }
 
-    fun updateContact(id: Int, name: String, email: String, phone: Int, ImageId: Int): Int {
+    fun updateContact(id: Int, name: String, address: String, email: String, phone: Int, ImageId: Int): Int {
         val db = this.writableDatabase
         val contentValues = ContentValues()
         contentValues.put("name", name)
+        contentValues.put("address", address)
         contentValues.put("email", email)
         contentValues.put("phone", phone)
         contentValues.put("imageId", ImageId)
