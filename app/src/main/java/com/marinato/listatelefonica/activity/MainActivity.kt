@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import com.marinato.listatelefonica.database.DBHelper
 import com.marinato.listatelefonica.databinding.ActivityMainBinding
@@ -17,13 +18,15 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var contactList: ArrayList<ContactModel>
     private lateinit var adapter: ArrayAdapter<ContactModel>
+    private lateinit var result: ActivityResultLauncher<Intent>
+    private lateinit var dbHelper: DBHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val dbHelper = DBHelper(this)
+        dbHelper = DBHelper(this)
         val sharedPreferences = application.getSharedPreferences(
             "login", Context.MODE_PRIVATE)
 
@@ -53,7 +56,27 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.buttonAdd.setOnClickListener{
-            startActivity(Intent(applicationContext, NewContactActivity::class.java))
+            result.launch(Intent(applicationContext, NewContactActivity::class.java))
         }
+
+        result = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){
+            if (it.data != null && it.resultCode == 1){
+                loadList()
+            }else if (it.data != null && it.resultCode == 0){
+                Toast.makeText(applicationContext, "Operation Canceled", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
+    private fun loadList() {
+        contactList = dbHelper.getAllContact()
+
+        adapter =
+            ArrayAdapter(
+                applicationContext,
+                android.R.layout.simple_list_item_1,
+                contactList
+            )
+        binding.listViewContacts.adapter = adapter
     }
 }
