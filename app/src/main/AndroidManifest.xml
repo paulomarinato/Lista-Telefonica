@@ -13,6 +13,12 @@
         android:theme="@style/Theme.ListaTelefonica"
         tools:targetApi="31">
         <activity
+            android:name=".activity.NewContactActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.ContactDetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.SignupActivity2"
             android:exported="false" />
         <activity
@@ -20,16 +26,16 @@
             android:exported="false" />
         <activity
             android:name=".activity.SplahScreen_Activity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".activity.MainActivity"
-            android:exported="false"/>
-
+            android:exported="false" />
     </application>
 
 </manifest>
