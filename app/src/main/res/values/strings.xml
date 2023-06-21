@@ -14,4 +14,5 @@
     <string name="signup_error">signup error</string>
     <string name="login_error">login error</string>
     <string name="logout">logout</string>
+    <string name="name">Name</string>
 </resources>

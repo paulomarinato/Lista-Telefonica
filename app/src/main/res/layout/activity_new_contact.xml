@@ -7,6 +7,19 @@
     android:orientation="vertical"
     android:padding="10dp"
     tools:context=".activity.NewContactActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="New Contact"
+        android:textSize="36dp"/>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:src="@drawable/contacts_logo"
+        android:padding="10dp"
+        android:id="@+id/image_Contact"/>
     
     <EditText
         android:id="@+id/edit_name"
@@ -37,6 +50,7 @@
         android:gravity="center"
         android:hint="Phone"
         android:inputType="phone"/>
+
     
     <LinearLayout
         android:layout_width="match_parent"

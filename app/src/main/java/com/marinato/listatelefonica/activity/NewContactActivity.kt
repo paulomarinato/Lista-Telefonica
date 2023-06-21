@@ -28,11 +28,11 @@ class NewContactActivity : AppCompatActivity() {
             if (name.isNotEmpty() && address.isNotEmpty() && email.isNotEmpty()){
                 val res = db.insertContact(name, address, email, phone, imageId)
                 if ( res > 0){
-                    Toast.makeText((applicationContext,"Insert OK", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(applicationContext,"Insert OK", Toast.LENGTH_SHORT).show()
                     setResult(1, i)
                     finish()
                 }else{
-                    Toast.makeText((applicationContext, "Insert Error", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(applicationContext, "Insert Error", Toast.LENGTH_SHORT).show()
                 }
             }
         }

@@ -150,6 +150,7 @@ class DBHelper(context: Context) : SQLiteOpenHelper (context, "database.db", nul
             c.moveToFirst()
             val idIndex = c.getColumnIndex("id")
             val nameIndex = c.getColumnIndex("name")
+            val addressIndex = c.getColumnIndex("address")
             val emailIndex = c.getColumnIndex("email")
             val phoneIndex = c.getColumnIndex("phone")
             val imageIdIndex = c.getColumnIndex("imageId")
@@ -157,6 +158,7 @@ class DBHelper(context: Context) : SQLiteOpenHelper (context, "database.db", nul
             contactModel = ContactModel(
                 id = c.getInt(idIndex),
                 name = c.getString(nameIndex),
+                address = c.getString(addressIndex),
                 email = c.getString(emailIndex),
                 phone = c.getInt(phoneIndex),
                 imageId = c.getInt(imageIdIndex)
@@ -176,6 +178,7 @@ class DBHelper(context: Context) : SQLiteOpenHelper (context, "database.db", nul
             c.moveToFirst()
             val idIndex = c.getColumnIndex("id")
             val nameIndex = c.getColumnIndex("name")
+            val addressIndex = c.getColumnIndex("address")
             val emailIndex = c.getColumnIndex("email")
             val phoneIndex = c.getColumnIndex("phone")
             val imageIdIndex = c.getColumnIndex("imageId")
@@ -183,6 +186,7 @@ class DBHelper(context: Context) : SQLiteOpenHelper (context, "database.db", nul
                 val contactModel = ContactModel(
                     id = c.getInt(idIndex),
                     name = c.getString(nameIndex),
+                    address = c.getString(addressIndex),
                     email = c.getString(emailIndex),
                     phone = c.getInt(phoneIndex),
                     imageId = c.getInt(imageIdIndex))
