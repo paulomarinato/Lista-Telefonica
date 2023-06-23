@@ -33,6 +33,7 @@ class DBHelper(context: Context) : SQLiteOpenHelper (context, "database.db", nul
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
         TODO("Not yet implemented")
     }
+
                             /* --- CRUD USER --- */
 
     fun insertuser(username: String, password: String): Long {
@@ -63,6 +64,7 @@ class DBHelper(context: Context) : SQLiteOpenHelper (context, "database.db", nul
         db.close()
         return res
     }
+
 
     fun getuser(username: String, password: String): UserModel{
         val db = this.readableDatabase

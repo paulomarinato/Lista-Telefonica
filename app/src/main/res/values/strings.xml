@@ -15,4 +15,5 @@
     <string name="login_error">login error</string>
     <string name="logout">logout</string>
     <string name="name">Name</string>
+    <string name="select_an_image">Select an Image</string>
 </resources>
